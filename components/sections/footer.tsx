@@ -56,15 +56,15 @@ export function Footer() {
             <ul className="mt-6 space-y-5 text-sm text-white/86">
               <li className="flex gap-4">
                 <Mail className="size-5 shrink-0" aria-hidden="true" />
-                info@cauchy.edu.co
+                cauchy593@gmail.com
               </li>
               <li className="flex gap-4">
                 <Phone className="size-5 shrink-0" aria-hidden="true" />
-                +57 300 123 4567
+                +593 097 880 5478
               </li>
               <li className="flex gap-4">
                 <MapPin className="size-5 shrink-0" aria-hidden="true" />
-                Bogota, Colombia
+                Quito, Ecuador
               </li>
             </ul>
           </div>
