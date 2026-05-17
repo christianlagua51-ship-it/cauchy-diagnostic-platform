@@ -1,4 +1,3 @@
-import { CTASection } from "@/components/sections/cta-section";
 import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/hero-section";
 import { StatsSection } from "@/components/sections/stats-section";
@@ -12,7 +11,6 @@ export default function HomePage() {
       <StatsSection />
       <SubjectsSection />
       <WhyChooseUsSection />
-      <CTASection />
       <Footer />
     </>
   );

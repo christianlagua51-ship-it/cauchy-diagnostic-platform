@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="112.46944"
+   height="128.73811"
+   viewBox="0 0 112.46943 128.73811"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="g1"
+     transform="translate(-68.982614,-27.288109)">
+    <path
+       id="path1"
+       d="m 72.303532,65.186794 v 52.913846 l 22.677106,15.11862"
+       style="fill:none;stroke:#10213f;stroke-width:6.64184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path2"
+       d="M 72.303532,65.186794 125.21733,31.170888 151.67422,46.288955"
+       style="fill:none;stroke:#10213f;stroke-width:6.64184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path3"
+       d="m 178.13113,65.186794 v 52.913846 l -52.9138,34.01648 -18.89785,-11.33883"
+       style="fill:none;stroke:#4b5563;stroke-width:6.64184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path4"
+       d="M 178.13113,65.186794 163.01306,53.847968"
+       style="fill:none;stroke:#4b5563;stroke-width:6.64184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path5"
+       d="m 121.95703,105.10937 c -0.6875,8.71875 -2.60938,11.10937 -5.625,11.10937 -0.70313,0 -2.29688,-0.17189 -3.40625,-1.125 1.54687,-0.20315 1.96875,-1.4375 1.96875,-2.17187 0,-1.54688 -1.17188,-2.23438 -2.1875,-2.23438 -1.0625,0 -2.23438,0.6875 -2.23438,2.28125 0,2.54688 2.67188,4.42188 5.85938,4.42188 5.04687,0 7.59375,-4.625 8.76562,-9.40625 0.6875,-2.76563 2.59375,-18.234383 3.03125,-24.140633 l 1,-13.21875 c 0.75,-9.78125 2.54688,-11.109375 4.95313,-11.109375 0.53124,0 2.17187,0.109375 3.34375,1.109375 -1.54688,0.21875 -1.96875,1.4375 -1.96875,2.1875 0,1.53125 1.17187,2.234375 2.17187,2.234375 1.0625,0 2.23438,-0.703125 2.23438,-2.296875 0,-2.546875 -2.65625,-4.40625 -5.84375,-4.40625 -5.04688,0 -7.125,5.15625 -8.01563,9.1875 -0.64062,2.921875 -2.5625,17.921875 -3.03125,24.34375 z m 0,0"
+       style="fill:#10213f;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.33333"
+       aria-label="R" />
+    <path
+       id="path6"
+       d=""
+       style="fill:#10213f;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+       aria-label="CAUCHY" />
+    <path
+       id="path9"
+       d=""
+       style="fill:#4b5563;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+       aria-label="CENTROACADÉMICO" />
+  </g>
+</svg>

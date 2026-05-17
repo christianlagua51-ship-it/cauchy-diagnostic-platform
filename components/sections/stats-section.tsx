@@ -3,13 +3,19 @@ import { Container } from "@/components/ui/container";
 
 export function StatsSection() {
   return (
-    <section aria-label="Resultados" className="py-8">
+    <section aria-label="Resultados" className="relative z-10 -mt-1 pb-12">
       <Container>
-        <div className="grid gap-4 rounded-[2rem] border border-white bg-white/86 p-4 shadow-[0_22px_60px_rgba(24,38,60,0.08)] sm:grid-cols-3">
+        <div className="border-line/70 grid rounded-xl border bg-white shadow-[0_18px_42px_rgba(16,35,69,0.08)] sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((item) => (
-            <div key={item.label} className="rounded-2xl bg-[#f8fafc] px-6 py-7 text-center">
-              <p className="text-navy text-4xl font-bold">{item.value}</p>
-              <p className="text-steel mt-2 text-sm font-medium">{item.label}</p>
+            <div
+              key={item.label}
+              className="lg:border-line/70 flex items-center gap-6 px-8 py-9 text-left lg:border-r lg:last:border-r-0"
+            >
+              <item.icon className="text-navy size-12 shrink-0 stroke-[1.7]" aria-hidden="true" />
+              <div>
+                <p className="text-navy text-2xl font-black">{item.value}</p>
+                <p className="text-navy/85 mt-2 text-sm font-medium">{item.label}</p>
+              </div>
             </div>
           ))}
         </div>

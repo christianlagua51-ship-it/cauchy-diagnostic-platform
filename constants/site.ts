@@ -1,55 +1,93 @@
-import { BookOpen, Brain, Calculator, LineChart, Medal, Users } from "lucide-react";
+import {
+  Atom,
+  BarChart3,
+  BookOpen,
+  ClipboardCheck,
+  Compass,
+  FunctionSquare,
+  Gem,
+  Medal,
+  MoveDiagonal2,
+  Sigma,
+  Target,
+  TrendingUp,
+  UserRound,
+  Users,
+} from "lucide-react";
 
 export const siteConfig = {
   name: "Cauchy",
   fullName: "Cauchy Centro Academico",
   navItems: [
     { label: "Inicio", href: "#inicio" },
-    { label: "Programas", href: "#programas" },
-    { label: "Metodo", href: "#metodo" },
+    { label: "Cursos", href: "#programas" },
+    { label: "Nosotros", href: "#metodo" },
+    { label: "Metodologia", href: "#metodo" },
+    { label: "Blog", href: "#blog" },
     { label: "Contacto", href: "#contacto" },
   ],
 };
 
 export const stats = [
-  { value: "+500", label: "estudiantes acompanados" },
-  { value: "95%", label: "mejora academica" },
-  { value: "8+", label: "areas de refuerzo" },
+  { value: "1,250+", label: "Estudiantes", icon: UserRound },
+  { value: "98%", label: "Satisfaccion", icon: Target },
+  { value: "7,500+", label: "Evaluaciones", icon: ClipboardCheck },
+  { value: "95%", label: "Aprobados", icon: Medal },
 ];
 
 export const subjects = [
   {
-    title: "Matematicas",
-    description: "Algebra, calculo, geometria y razonamiento.",
-    icon: Calculator,
+    title: "Algebra",
+    description: "Desde lo basico hasta avanzado",
+    icon: MoveDiagonal2,
+  },
+  {
+    title: "Calculo",
+    description: "Diferencial e integral, limites y mas",
+    icon: FunctionSquare,
+  },
+  {
+    title: "Geometria",
+    description: "Plana, espacial y trigonometria",
+    icon: Compass,
+  },
+  {
+    title: "Estadistica",
+    description: "Probabilidad, distribuciones y mas",
+    icon: BarChart3,
   },
   {
     title: "Fisica",
-    description: "Modelos, ejercicios guiados y resolucion aplicada.",
-    icon: LineChart,
-  },
-  { title: "Quimica", description: "Fundamentos, practica estructurada y examenes.", icon: Brain },
-  {
-    title: "Lectura critica",
-    description: "Comprension, argumentacion y tecnica de prueba.",
-    icon: BookOpen,
+    description: "Mecanica, dinamica y mucho mas",
+    icon: Atom,
   },
 ];
 
 export const features = [
   {
-    title: "Metodo claro",
-    description: "Diagnostico inicial, ruta personalizada y sesiones con objetivos medibles.",
-    icon: Medal,
+    title: "Metodo probado",
+    description: "Ensenanza basada en logica y comprension profunda.",
+    icon: BookOpen,
   },
   {
-    title: "Mentoria cercana",
-    description: "Docentes que explican con precision y acompanamiento continuo.",
+    title: "Docentes expertos",
+    description: "Profesionales con amplia experiencia academica.",
     icon: Users,
   },
   {
-    title: "Practica inteligente",
-    description: "Ejercicios progresivos, revision de errores y simulacros academicos.",
-    icon: LineChart,
+    title: "Evaluacion inteligente",
+    description: "Diagnosticos personalizados con analisis detallado.",
+    icon: TrendingUp,
   },
+  {
+    title: "Resultados reales",
+    description: "Mejoramos tu rendimiento academico garantizado.",
+    icon: Gem,
+  },
+];
+
+export const footerGroups = [
+  { title: "Academia", links: ["Cursos", "Nosotros", "Metodologia"] },
+  { title: "Recursos", links: ["Blog", "Material gratuito", "Preguntas frecuentes"] },
+  { title: "Legal", links: ["Terminos y condiciones", "Privacidad"] },
 ];
