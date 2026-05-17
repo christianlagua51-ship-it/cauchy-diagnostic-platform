@@ -6,7 +6,10 @@ import { Logo } from "@/components/ui/logo";
 
 export function Footer() {
   return (
-    <footer className="bg-[radial-gradient(circle_at_78%_12%,rgba(16,90,170,0.5),transparent_36%),linear-gradient(135deg,#001e52,#00306f_58%,#00224f)] py-10 text-white">
+    <footer
+      id="blog"
+      className="bg-[radial-gradient(circle_at_78%_12%,rgba(16,90,170,0.5),transparent_36%),linear-gradient(135deg,#001e52,#00306f_58%,#00224f)] py-10 text-white"
+    >
       <Container>
         <div className="grid gap-10 md:grid-cols-[1.35fr_repeat(3,1fr)_1.25fr]">
           <div>
@@ -68,7 +71,7 @@ export function Footer() {
         </div>
         <div className="mt-10 grid grid-cols-[1fr_auto_1fr] items-center gap-6 text-center text-sm text-white/82">
           <span className="h-px bg-white/18" />
-          <p>© 2024 Cauchy Centro Academico. Todos los derechos reservados.</p>
+          <p>© 2026 Cauchy Centro Academico. Todos los derechos reservados.</p>
           <span className="h-px bg-white/18" />
         </div>
       </Container>

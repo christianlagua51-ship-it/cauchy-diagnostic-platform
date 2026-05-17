@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/container";
 
 export function StatsSection() {
   return (
-    <section aria-label="Resultados" className="relative z-10 -mt-1 pb-12">
+    <section id="nosotros" aria-label="Resultados" className="relative z-10 -mt-1 pb-12">
       <Container>
         <div className="border-line/70 grid rounded-xl border bg-white shadow-[0_18px_42px_rgba(16,35,69,0.08)] sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((item) => (

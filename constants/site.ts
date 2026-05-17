@@ -21,7 +21,7 @@ export const siteConfig = {
   navItems: [
     { label: "Inicio", href: "#inicio" },
     { label: "Cursos", href: "#programas" },
-    { label: "Nosotros", href: "#metodo" },
+    { label: "Nosotros", href: "#nosotros" },
     { label: "Metodologia", href: "#metodo" },
     { label: "Blog", href: "#blog" },
     { label: "Contacto", href: "#contacto" },

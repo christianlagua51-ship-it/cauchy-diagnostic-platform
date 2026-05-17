@@ -17,9 +17,9 @@ function MathGraph() {
       <p className="text-navy absolute right-5 bottom-40 hidden text-xl md:block">
         <InlineMath math="x^2+y^2=r^2" />
       </p>
-      <div className="text-navy absolute right-6 bottom-14 hidden text-xl md:block">
+      <p className="text-navy absolute right-6 bottom-14 hidden text-xl md:block">
         <InlineMath math={"\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}"} />
-      </div>
+      </p>
       <div className="absolute top-28 right-9 hidden h-24 w-24 md:block">
         <svg viewBox="0 0 100 100" className="text-navy size-full">
           <path d="M18 82h64L18 18v64Z" fill="none" stroke="currentColor" strokeWidth="1.4" />
