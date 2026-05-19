@@ -138,7 +138,7 @@ export function HeroSection() {
             metas.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <ButtonLink href="#contacto" className="h-16 gap-4 rounded-lg px-6">
+            <ButtonLink href="/test-diagnostico" className="h-16 gap-4 rounded-lg px-6">
               <UserRound className="size-5" aria-hidden="true" />
               Realizar diagnostico
               <ArrowRight className="size-4" aria-hidden="true" />

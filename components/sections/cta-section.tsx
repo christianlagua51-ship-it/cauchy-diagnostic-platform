@@ -15,7 +15,7 @@ export function CTASection() {
         Realiza nuestro diagnostico gratuito y descubre tu nivel actual.
       </p>
       <ButtonLink
-        href="mailto:admisiones@cauchy.academy"
+        href="/test-diagnostico"
         variant="secondary"
         className="mt-9 h-14 rounded-lg px-7"
       >
