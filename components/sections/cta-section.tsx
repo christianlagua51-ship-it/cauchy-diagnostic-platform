@@ -5,7 +5,6 @@ import { ButtonLink } from "@/components/ui/button";
 export function CTASection() {
   return (
     <article
-      id="contacto"
       className="relative min-h-[315px] overflow-hidden rounded-xl bg-[radial-gradient(circle_at_86%_18%,rgba(16,90,170,0.5),transparent_32%),linear-gradient(135deg,#08235a,#002760_62%,#013c84)] px-8 py-9 text-white shadow-[0_18px_42px_rgba(0,36,90,0.18)] sm:px-10"
     >
       <h2 className="max-w-[360px] text-3xl leading-tight font-black sm:text-4xl">

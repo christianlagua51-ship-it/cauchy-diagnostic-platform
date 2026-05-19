@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 
 export function WhyChooseUsSection() {
   return (
-    <section id="metodo" className="pt-3 pb-10">
+    <section id="metodo" className="pt-14 pb-10">
       <Container className="grid gap-8 lg:grid-cols-[1.13fr_1fr] lg:items-start">
         <div>
           <h2 className="text-navy text-2xl font-black tracking-tight uppercase">

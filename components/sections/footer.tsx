@@ -1,8 +1,16 @@
-import { Camera, Mail, MapPin, Music2, Phone, Play } from "lucide-react";
+import { Camera, Mail, MessageCircle, Music2 } from "lucide-react";
 
+import { contactContent } from "@/constants/landing-content";
 import { footerGroups } from "@/constants/site";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
+
+const footerSocialIcons = {
+  Instagram: Camera,
+  TikTok: Music2,
+  WhatsApp: MessageCircle,
+  Correo: Mail,
+};
 
 export function Footer() {
   return (
@@ -18,23 +26,21 @@ export function Footer() {
               Entender hoy, transformar tu futuro.
             </p>
             <div className="mt-6 flex gap-4">
-              {[Camera, Music2, Play].map((Icon) => (
+              {contactContent.links.map((link) => {
+                const Icon = footerSocialIcons[link.label as keyof typeof footerSocialIcons];
+                return (
                 <a
-                  key={Icon.displayName}
-                  href="#inicio"
+                  key={link.label}
+                  href={link.href}
+                  target={link.type === "external" ? "_blank" : undefined}
+                  rel={link.type === "external" ? "noreferrer" : undefined}
                   className="grid size-9 place-items-center rounded-full bg-white/12 text-white transition hover:bg-white/20"
-                  aria-label="Red social de Cauchy"
+                  aria-label={link.label}
                 >
                   <Icon className="size-4" aria-hidden="true" />
                 </a>
-              ))}
-              <a
-                href="#inicio"
-                className="grid size-9 place-items-center rounded-full bg-white/12 text-sm font-black text-white transition hover:bg-white/20"
-                aria-label="Facebook de Cauchy"
-              >
-                f
-              </a>
+                );
+              })}
             </div>
           </div>
           {footerGroups.map((group) => (
@@ -42,9 +48,9 @@ export function Footer() {
               <h3 className="text-sm font-black tracking-wide uppercase">{group.title}</h3>
               <ul className="mt-6 space-y-4 text-sm text-white/86">
                 {group.links.map((link) => (
-                  <li key={link}>
-                    <a href="#inicio" className="transition hover:text-white">
-                      {link}
+                  <li key={link.label}>
+                    <a href={link.href} className="transition hover:text-white">
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -54,18 +60,14 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-black tracking-wide uppercase">Contactanos</h3>
             <ul className="mt-6 space-y-5 text-sm text-white/86">
-              <li className="flex gap-4">
-                <Mail className="size-5 shrink-0" aria-hidden="true" />
-                cauchy593@gmail.com
-              </li>
-              <li className="flex gap-4">
-                <Phone className="size-5 shrink-0" aria-hidden="true" />
-                +593 097 880 5478
-              </li>
-              <li className="flex gap-4">
-                <MapPin className="size-5 shrink-0" aria-hidden="true" />
-                Quito, Ecuador
-              </li>
+              {contactContent.links.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="flex gap-4 transition hover:text-white">
+                    <Mail className="size-5 shrink-0" aria-hidden="true" />
+                    {link.value ?? link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

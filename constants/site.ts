@@ -22,7 +22,7 @@ export const siteConfig = {
     { label: "Inicio", href: "#inicio" },
     { label: "Cursos", href: "#programas" },
     { label: "Nosotros", href: "#nosotros" },
-    { label: "Metodologia", href: "#metodo" },
+    { label: "Metodologia", href: "#metodologia" },
     { label: "Blog", href: "#blog" },
     { label: "Contacto", href: "#contacto" },
   ],
@@ -87,7 +87,26 @@ export const features = [
 ];
 
 export const footerGroups = [
-  { title: "Academia", links: ["Cursos", "Nosotros", "Metodologia"] },
-  { title: "Recursos", links: ["Blog", "Material gratuito", "Preguntas frecuentes"] },
-  { title: "Legal", links: ["Terminos y condiciones", "Privacidad"] },
+  {
+    title: "Academia",
+    links: [
+      { label: "Cursos", href: "#programas" },
+      { label: "Nosotros", href: "#nosotros" },
+      { label: "Metodologia", href: "#metodologia" },
+    ],
+  },
+  {
+    title: "Recursos",
+    links: [
+      { label: "Diagnostico", href: "/test-diagnostico" },
+      { label: "Contacto", href: "#contacto" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Terminos y condiciones", href: "#inicio" },
+      { label: "Privacidad", href: "#inicio" },
+    ],
+  },
 ];
