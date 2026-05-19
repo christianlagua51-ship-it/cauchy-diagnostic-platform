@@ -16,9 +16,15 @@ import {
 } from "@/components/diagnostic/diagnostic-results";
 import { ProgressBar } from "@/components/diagnostic/progress-bar";
 import { QuestionCard } from "@/components/diagnostic/question-card";
+import { StudentInfoForm } from "@/components/diagnostic/student-info-form";
+import {
+  sendDiagnosticResult,
+  type DiagnosticResultPayload,
+  type StudentInformation,
+} from "@/services/diagnostic-results";
 
 type AnswerMap = Partial<Record<number, DiagnosticOption["id"]>>;
-type DiagnosticStep = "intro" | "questions" | "results";
+type DiagnosticStep = "intro" | "student-info" | "questions" | "results";
 
 function getInterpretation(score: number) {
   if (score >= 90) {
@@ -99,10 +105,65 @@ function buildSummary(answers: AnswerMap): DiagnosticSummary {
   };
 }
 
+function buildResultPayload(
+  student: StudentInformation,
+  summary: DiagnosticSummary,
+  testStartedAt: Date,
+  testCompletedAt: Date,
+): DiagnosticResultPayload {
+  const sortedByScore = [...summary.areaResults].sort((a, b) => b.score - a.score);
+  const strongestArea = sortedByScore[0];
+  const weakestArea = sortedByScore[sortedByScore.length - 1];
+  const scoreByAreaId = Object.fromEntries(
+    summary.areaResults.map((area) => [area.areaId, area.score]),
+  ) as Record<DiagnosticAreaId, number>;
+  const durationSeconds = Math.max(
+    0,
+    Math.round((testCompletedAt.getTime() - testStartedAt.getTime()) / 1000),
+  );
+
+  return {
+    timestamp: testCompletedAt.toISOString(),
+    testStartedAt: testStartedAt.toISOString(),
+    testCompletedAt: testCompletedAt.toISOString(),
+    durationSeconds,
+    averageSecondsPerQuestion: Number((durationSeconds / summary.totalQuestions).toFixed(2)),
+    student,
+    totalScore: summary.totalScore,
+    areaScores: {
+      aritmetica: scoreByAreaId.arithmetic,
+      algebra: scoreByAreaId.algebra,
+      logica: scoreByAreaId.logic,
+      funciones: scoreByAreaId.functions,
+      geometria: scoreByAreaId.geometry,
+    },
+    scoreByArea: summary.areaResults.map((area) => ({
+      areaId: area.areaId,
+      area: area.label,
+      score: area.score,
+      correct: area.correct,
+      total: area.total,
+    })),
+    strongestArea: {
+      areaId: strongestArea.areaId,
+      area: strongestArea.label,
+      score: strongestArea.score,
+    },
+    weakestArea: {
+      areaId: weakestArea.areaId,
+      area: weakestArea.label,
+      score: weakestArea.score,
+    },
+    recommendation: summary.recommendationSummary,
+  };
+}
+
 export function DiagnosticExperience() {
   const [step, setStep] = useState<DiagnosticStep>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerMap>({});
+  const [studentInfo, setStudentInfo] = useState<StudentInformation | null>(null);
+  const [testStartedAt, setTestStartedAt] = useState<Date | null>(null);
 
   const currentQuestion = diagnosticQuestions[currentIndex];
   const currentArea = diagnosticAreas.find((area) => area.id === currentQuestion.areaId);
@@ -115,12 +176,35 @@ export function DiagnosticExperience() {
 
   function restart() {
     setAnswers({});
+    setStudentInfo(null);
+    setTestStartedAt(null);
     setCurrentIndex(0);
     setStep("intro");
   }
 
+  function submitStudentInfo(student: StudentInformation) {
+    setStudentInfo(student);
+    setTestStartedAt(new Date());
+    setStep("questions");
+  }
+
+  function finishDiagnostic() {
+    const testCompletedAt = new Date();
+
+    if (studentInfo && testStartedAt) {
+      const payload = buildResultPayload(studentInfo, summary, testStartedAt, testCompletedAt);
+      void sendDiagnosticResult(payload);
+    }
+
+    setStep("results");
+  }
+
   if (step === "intro") {
-    return <DiagnosticIntro questionCount={diagnosticQuestions.length} onStart={() => setStep("questions")} />;
+    return <DiagnosticIntro questionCount={diagnosticQuestions.length} onStart={() => setStep("student-info")} />;
+  }
+
+  if (step === "student-info") {
+    return <StudentInfoForm onSubmit={submitStudentInfo} />;
   }
 
   if (step === "results") {
@@ -144,7 +228,7 @@ export function DiagnosticExperience() {
         onSelect={selectAnswer}
         onPrevious={() => setCurrentIndex((index) => Math.max(index - 1, 0))}
         onNext={() => setCurrentIndex((index) => Math.min(index + 1, diagnosticQuestions.length - 1))}
-        onSubmit={() => setStep("results")}
+        onSubmit={finishDiagnostic}
       />
     </div>
   );

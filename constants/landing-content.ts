@@ -1,4 +1,4 @@
-import { BookOpenCheck, Brain, Eye, MessageCircle, Target } from "lucide-react";
+import { BookOpenCheck, Brain, Eye, Target } from "lucide-react";
 
 export const aboutContent = {
   title: "Nosotros",
@@ -88,13 +88,9 @@ export const methodologyContent = {
 };
 
 export const contactContent = {
-  title: "Contacto",
-  socialTitle: "Redes oficiales",
-  scheduleTitle: "Horario",
-  schedule: "Próximamente.",
-  messageTitle: "Mensaje",
+  title: "¿Listo para empezar?",
   message:
-    "Si tienes preguntas o quieres empezar tu diagnóstico, estaremos felices de ayudarte.",
+    "Descubre tu perfil matemático y comienza una experiencia matemática basada en comprensión, curiosidad y claridad.",
   links: [
     {
       label: "Instagram",
@@ -118,5 +114,4 @@ export const contactContent = {
       type: "email",
     },
   ],
-  icon: MessageCircle,
 };
