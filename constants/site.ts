@@ -6,12 +6,8 @@ import {
   Compass,
   FunctionSquare,
   Gem,
-  Medal,
   MoveDiagonal2,
-  Sigma,
-  Target,
   TrendingUp,
-  UserRound,
   Users,
 } from "lucide-react";
 
@@ -29,10 +25,24 @@ export const siteConfig = {
 };
 
 export const stats = [
-  { value: "1,250+", label: "Estudiantes", icon: UserRound },
-  { value: "98%", label: "Satisfaccion", icon: Target },
-  { value: "7,500+", label: "Evaluaciones", icon: ClipboardCheck },
-  { value: "95%", label: "Aprobados", icon: Medal },
+  {
+    value: "5",
+    label: "Áreas evaluadas",
+    subtitle: "Aritmética, álgebra, lógica, funciones y geometría.",
+    icon: Compass,
+  },
+  {
+    value: "Resultados",
+    label: "Personalizados",
+    subtitle: "Diagnóstico y recomendaciones adaptadas al estudiante.",
+    icon: TrendingUp,
+  },
+  {
+    value: "Diagnóstico",
+    label: "Instantáneo",
+    subtitle: "Obtén resultados al finalizar la evaluación.",
+    icon: ClipboardCheck,
+  },
 ];
 
 export const subjects = [
