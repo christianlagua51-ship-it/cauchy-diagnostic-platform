@@ -24,7 +24,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-bold transition duration-200",
+        "interactive-lift inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-bold disabled:pointer-events-none disabled:opacity-60",
         variants[variant],
         className,
       )}
@@ -44,7 +44,7 @@ export function ButtonLink({
   return (
     <a
       className={cn(
-        "inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-bold transition duration-200",
+        "interactive-lift inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-bold",
         variants[variant],
         className,
       )}

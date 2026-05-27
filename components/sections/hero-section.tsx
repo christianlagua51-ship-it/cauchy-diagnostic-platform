@@ -122,33 +122,35 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden pt-28 pb-8 sm:pb-12 lg:min-h-[675px] lg:pt-36"
+      className="relative overflow-hidden pt-[5.75rem] pb-2 md:pt-28 md:pb-12 lg:min-h-[675px] lg:pt-36"
     >
       <Navbar />
-      <Container className="grid items-center gap-8 lg:grid-cols-[0.78fr_1.22fr]">
-        <div className="relative z-10 max-w-[520px] pt-5">
-          <h1 className="text-navy text-[3.4rem] leading-[1.14] font-black tracking-[0.01em] uppercase sm:text-[4.2rem] lg:text-[4.85rem]">
-            Entender hoy,
+      <Container className="grid items-center gap-4 md:gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+        <div className="relative z-10 max-w-[520px] pt-0 md:pt-5">
+          <h1 className="text-navy text-[2.5rem] leading-[1.04] font-black tracking-[0.01em] uppercase md:text-[4.2rem] md:leading-[1.14] lg:text-[4.85rem]">
+            <span className="block">Entender hoy,</span>
             <span className="text-steel block">transformar</span>
             <span className="text-steel block">tu futuro.</span>
           </h1>
-          <span className="mt-6 block h-0.5 w-12 bg-blue-700" />
-          <p className="text-navy/90 mt-6 max-w-[460px] text-lg leading-8">
+          <span className="mt-4 block h-0.5 w-12 bg-blue-700 md:mt-6" />
+          <p className="text-navy/90 mt-3 max-w-[460px] text-base leading-7 md:mt-6 md:text-lg md:leading-8">
             Centro academico especializado en matematicas. Descubre tu potencial y alcanza tus
             metas.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <ButtonLink href="/test-diagnostico" className="h-16 gap-4 rounded-lg px-6">
+          <div className="mt-5 flex flex-col gap-2 md:mt-10 md:flex-row md:gap-4">
+            <ButtonLink href="/test-diagnostico" className="h-12 gap-4 rounded-lg px-6 md:h-16">
               <UserRound className="size-5" aria-hidden="true" />
               Realizar diagnostico
               <ArrowRight className="size-4" aria-hidden="true" />
             </ButtonLink>
-            <ButtonLink href="#programas" variant="secondary" className="h-16 rounded-lg px-9">
+            <ButtonLink href="#programas" variant="secondary" className="h-12 rounded-lg px-9 md:h-16">
               Ver cursos
             </ButtonLink>
           </div>
         </div>
-        <MathGraph />
+        <div className="hidden md:block">
+          <MathGraph />
+        </div>
       </Container>
     </section>
   );

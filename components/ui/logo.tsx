@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { cn } from "@/lib/cn";
 
 export function Logo({ inverted = false }: { inverted?: boolean }) {
   return (
-    <a
-      href="#inicio"
-      className="flex min-w-0 items-center gap-3.5 sm:gap-4"
+    <Link
+      href="/"
+      className="interactive-lift flex min-w-0 items-center gap-3.5 sm:gap-4"
       aria-label="Cauchy Centro Academico inicio"
     >
       <span
@@ -33,6 +34,6 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
           CENTRO ACADÉMICO
         </span>
       </span>
-    </a>
+    </Link>
   );
 }
